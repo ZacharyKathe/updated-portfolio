@@ -57,6 +57,15 @@ nav{
     margin: 15px;
 }
 
+#back{
+    background-color: rgb(73, 3, 105);
+    color: white;
+}
+#back:hover{
+    background-color: white;
+    color: rgb(73, 3, 105);
+}
+
 #esriText{
     text-align: center;
 }
