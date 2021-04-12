@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head><title>Zachary Kathe Portfolio</title>
+        <!-- include leaflet js css -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css"/>
+        <link rel="stylesheet" href="./assets/css/style1.css">
+        </head>
+        
+    <body class="page_1_body">
+          <section class="page_1_header">
+             <h1 class="center">My Work Examples </h1>
+                <p class="center">The following are projects I made while a student at the University of Washington.</p>
+        </section>
+        
+          <nav>
+              <a href="https://github.com/ZacharyKathe" class="link">GitHub</a>
+              <a href="https://www.linkedin.com/in/zachary-kathe-621415189/" class="link">LinkedIn</a>
+        
+          </nav>
+        <br>
+        <p class="page_1_allign_left">
+            <u>Map Programming</u>
+        </p>
+        <br>
+        <br>
+        <p id="leaflet" class="page_1_allign_left">
+            Using Notepad++, I mapped out my three favorite buildings from my time at the University of Washington. The outlined buildings have pop-ups with a little information.
+            I used html, JavaScript, GeoJSON, and Leaflet to showcase my ability to creat a web map. 
+        </p>
+        <br><br>
+        <!--Brings in leaflet basemap with width & height px  -->
+        <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+        <div id="mapid" style="width: 600px; height: 400px; margin: auto"></div>
+        <script>
+        //<!-- making a variable(mymap) setting view to UW and a zoom of 16. -->
+        var mymap = L.map('mapid').setView([47.656896, -122.307511],15);
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+        //<!-- making a feature collection of my polygons and info -->
+        var myZoneUW = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Smith Hall","popupContents":"Department of Geography","Indoor/Outdoor":"Yes","Food/No_Food":"No"},"geometry":{"type":"Polygon","coordinates":[[[-122.30697154998778,47.65696543438123],[-122.30708420276642,47.65689678164455],[-122.30703592300415,47.65687510181421],[-122.30759382247925,47.65649931665812],[-122.30738997459412,47.656358396527324],[-122.30672478675841,47.65680283564809],[-122.30697154998778,47.65696543438123]]]}},
+        {"type":"Feature","properties":{"name":"Husky Union Building","popupContents":"Student hangout w/ food","Indoor/Outdoor":"Yes","Food/No_Food":"Yes"},"geometry":{"type":"Polygon","coordinates":[[[-122.3053193092346,47.65587781988791],[-122.30537831783295,47.65566463033835],[-122.3054963350296,47.65567908389466],[-122.3055499792099,47.655512867755775],[-122.30551242828369,47.65549480075231],[-122.30560898780821,47.65517320704409],[-122.3056787252426,47.6551840473137],[-122.30568408966063,47.65511539223484],[-122.30556070804595,47.65509371166486],[-122.3055499792099,47.654949174301635],[-122.30533540248871,47.65467093875105],[-122.3051208257675,47.65474682132097],[-122.30523347854614,47.654891359244324],[-122.30475604534148,47.655057577361575],[-122.30464339256285,47.655498414153485],[-122.30480432510375,47.65552732135409],[-122.30477213859558,47.65567908389466],[-122.30484724044801,47.65568631067129],[-122.30480968952179,47.65581277910065],[-122.3053193092346,47.65587781988791]]]}},
+        {"type":"Feature","properties":{"name":"Intramural Activities Building","popupContents":"Gym; Rock Climbing; Basketball;Lap Pool","Indoor/Outdoor":"Yes","Food/No_Food":"Yes"},"geometry":{"type":"Polygon","coordinates":[[[-122.30205237865447,47.654381861284065],[-122.30225086212158,47.653760339310935],[-122.30167150497437,47.653688068833965],[-122.30180025100708,47.653247216758515],[-122.30053424835204,47.65307737931015],[-122.30044305324553,47.653384531738475],[-122.30065226554869,47.653413440109304],[-122.3005771636963,47.65363386591059],[-122.30041623115541,47.65361941178819],[-122.3003089427948,47.653912106987],[-122.30074882507324,47.653977150141735],[-122.30079710483551,47.65385429078146],[-122.30114579200745,47.65390849347606],[-122.30111360549927,47.65401328519268],[-122.30154275894166,47.65408916871827],[-122.30149447917937,47.65429513773191],[-122.30205237865447,47.654381861284065]]]}}]}
+        
+        
+        //<!-- Assigning colors to my boolian expression -->
+        function styleFunction(feature){
+        switch (feature.properties.Food/No_Food){
+        case "No": return {color:"green"};
+        case "Yes": return {color:"blue"};
+        }
+        }
+        //<!-- Creating three functions to change the color of my pologons we call in later -->
+        function styleFunction(){return {color:"purple"}}
+        function newStyle(){geojsonLayer.setStyle({color:"green"});}
+        function oldStyle(){geojsonLayer.setStyle({color:"purple"});}
+        
+        //<!--building my layer with myZoneUW, style, and binding pop-ups -->
+        
+        var geojsonLayer=L.geoJSON(myZoneUW, {style:styleFunction, onEachFeature: happenHover}).addTo(mymap); 
+                    function styleFunction() {return {color: "purple"}; }
+                    function newStyle(){geojsonLayer, geojsonLayer.setStyle({color:"blue"});}
+                    function oldStyle(){geojsonLayer.setStyle({color:"green"});}
+                    function happenHover(feature,layer){ 
+                   layer.bindPopup(feature.properties.name + '<br>' +  
+                           feature.properties.popupContents, {closeButton: false});
+                            layer.on('mouseover', function(){layer.openPopup();});
+                            layer.on('mouseover', newStyle);
+                            layer.on('mouseout', oldStyle);
+                            layer.on('mouseout', function() {layer.closePopup();});}  
+        
+        
+        
+        </script>
+        
+        <br>
+        <br><br>
+        <br>
+        <p class="page_1_allign_left_dark"><u>ESRI Story Map</u></p>
+        <br>
+        <br>
+        <p class="page_1_allign_left_dark" id="esriText">I made this story map in ArcGIS Online as a project for a maps and health class at the University of Washington. I used R for computations and data wrangling in order to produce thematic maps. My goal was to show how many people are affected by addiction and mental illness. Moreover, I provided an interactive map of the Seattle's metropolitan area with over 100 different in-patient facilities. The map pop-ups display the name, location, and website for each location.</b></p1>
+        </p>
+        <br><br>
+        <br><br>
+        <iframe id="arcmap" src="https://storymaps.arcgis.com/stories/6471821f9aeb4a3b9ba2aa43c2ee1690?header" width="100%" height="500px" frameborder="0" allowfullscreen allow="geolocation"></iframe>
+        <br>
+        <hr>
+        <br>
+        <br>
+        <br>
+        <br>
+        <section id="pitchVideo" class="you_tube">
+        <p class="page_1_allign_left_dark"><u>App creation</u></p>
+        <br>
+        <br>
+        <p class="page_1_allign_left_dark" id="learningApp">Our group made an app for children unable to attend school because of Covid-19. We did surveys of parents with children affected by Covid to see what was needed in an App. This App was fully fuctional but never hosted to the Apple store or the Android market.</p>
+        <br>
+        <br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/GJC1-vjYsdE" frameborder="0" id="video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </section>
+        <hr>
+        <br>
+        <br>
+          <p class="teal_text">This portfolio I coded myself to highlight some of my technical abilities. For over a year I was with
+            Seattle Public Utilities analyzing construction site plans. I tracked and mapped the drainage and waste water assets for private construction permits in ArcMap 10.6.1. I can perform complex drafting tasks with multiple platforms like ArcMap, QGIS and geojson.io. I have performed data analysis in SQL and R languages. I graduated December 2020 from the University of Washington with a 3.0.
+            Shortly after graduation I was accepted into the UW Python certification program. I am also double enrolled in the UW coding bootcamp because I want to develop software.</p>
+          <p class="teal_text">Thank you for your time</p>
+        <footer class="bottom">
+        
+        <p>Phone: (480)252-6428</p>   <p>Email: zacharykathe@gmail.com</p>
+        </footer>
+    </body>
+
+    
+</html>

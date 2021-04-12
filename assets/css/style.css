@@ -1,0 +1,457 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    background-color: rgb(73, 3, 105);
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    padding-right: 10px;
+}
+
+footer{
+    display: flex;
+    background-color: white;
+    color: rgb(73, 3, 105);
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    padding-right: 10px;
+}
+
+
+
+.subhead {
+    background-image: url("/assets/images/uw_campus_cherry_trees.JPG");
+    background-position-x: center;
+    background-position-y: center;
+    width: 100%;
+    height: 250px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+}
+.subhead img {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+h1{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    font-size: 200%;
+    padding-left: 70px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    background-color: rgb(73, 3, 105);
+}
+.mylinks{
+    font-size: 18px;
+    padding: 10px;
+    color: rgb(73, 3, 105);
+    background-color: rgb(249, 246, 250);
+    border-radius: 3px;
+}
+.mylinks:hover{
+    color: white;
+    background-color: rgb(73, 3, 105);
+    opacity: 0.2px;
+}
+
+.info {
+    display: flex;
+    text-align: center;
+    color: white;
+    padding: 2px;
+    margin: 2px;
+    
+}
+
+
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    background-image: linear-gradient(
+        rgb(73, 3, 105) 1%,
+        rgb(167, 167, 164) 30%,
+        rgb(250, 250, 248) 90%
+    );
+    
+}
+
+aside {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: flex-end;
+    background-image: linear-gradient(
+        rgb(73, 3, 105) 1%,
+        rgb(167, 167, 164) 30%,
+        rgb(250, 250, 248) 90%
+    );   
+  }
+
+aside h2 {
+      border-width: 4px;
+      color: rgb(73, 3, 105);
+      border-color: rgb(73, 3, 105);
+      border-right-style: groove;
+      border-top-style: ridge;
+      font-size: 24px;
+
+  }
+#light {
+    border-width: 4px;
+      color: white;
+      border-color: white;
+      border-right-style: groove;
+      border-top-style: ridge;
+}
+
+
+.work {display: flex;
+         flex-direction: row;
+        }
+  
+
+
+section {
+       
+    flex: 3;
+    
+  }
+  
+.sample-img_1 {
+    background-image: url("/assets/images/app_creation.JPG");
+    width: 100%;
+    height: 250px;
+    background-position-y: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    border: 4px solid;
+    border-color: rgb(243, 248, 252);
+
+}
+
+
+.sample-img_1 p {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(203, 206, 209);
+    color: rgb(73, 3, 105);
+    font-size: 24px;
+    padding: 10px;
+    text-decoration: bold;
+}
+
+.sample-img_1 h6 {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(203, 206, 209);
+    color: rgb(73, 3, 105);
+    font-size: 12px;
+    padding: 10px;
+    text-decoration: bold;
+    }
+
+.sample-img_1:hover {
+    border-radius: 10% 10% 10% 0%;
+    opacity: 0.2px;
+
+}
+.sample-img_1 h6:hover {
+    background-color: rgb(16, 230, 230);
+    color: rgb(74, 87, 97);
+    border-radius: 0px 0px 5px 0px;
+}
+
+.sample-img_1 p:hover {
+    background-color: rgb(16, 230, 230);
+    color: rgb(74, 87, 97);
+}
+
+.sample-img_2 {
+    background-image: url("/assets/images/esri_story_map.JPG");
+    background-size: cover;
+    width: 50%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    border: 4px solid;
+    border-color: white;
+    margin: 3px;
+}
+
+.sample-img_2 p {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(203, 206, 209);
+    color: rgb(73, 3, 105);
+    font-size: 20px;
+    padding: 2px;
+    text-decoration: bold;
+}
+
+.sample-img_2 h6 {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(203, 206, 209);
+    color: rgb(73, 3, 105);
+    font-size: 12px;
+    padding: 2px;
+    text-decoration: bold;
+}
+
+.sample-img_2:hover {
+    border-radius: 10% 10% 10% 0%;
+    opacity: 0.2px;
+
+}
+.sample-img_2 h6:hover {
+    background-color: rgb(16, 230, 230);
+    color: rgb(74, 87, 97);
+    border-radius: 0px 0px 5px 0px;
+}
+
+.sample-img_2 p:hover {
+    background-color: rgb(16, 230, 230);
+    color: rgb(74, 87, 97);
+}
+
+.sample-img_3 {
+    background-image: url("/assets/images/leaflet_map_2.JPG");
+    background-size: cover;
+    width: 50%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    border: 4px solid;
+    border-color: white;
+    margin: 3px;
+}
+
+.sample-img_3 p {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(203, 206, 209);
+    color: rgb(73, 3, 105);
+    font-size: 20px;
+    padding: 2px;
+    text-decoration: bold;
+}
+
+.sample-img_3 h6 {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(203, 206, 209);
+    color: rgb(73, 3, 105);
+    font-size: 12px;
+    padding: 2px;
+    text-decoration: bold;
+}
+
+.sample-img_3:hover {
+    border-radius: 10% 10% 10% 0%;
+    opacity: 0.2px;
+
+}
+.sample-img_3 h6:hover {
+    background-color: rgb(16, 230, 230);
+    color: rgb(74, 87, 97);
+    border-radius: 0px 0px 5px 0px;
+}
+
+.sample-img_3 p:hover {
+    background-color: rgb(16, 230, 230);
+    color: rgb(74, 87, 97);
+}
+
+.sample-img_4 {
+    background-image: url("/assets/images/image_1.JPG");
+    background-size: cover;
+    width: 50%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    border: 4px solid;
+    border-color: white;
+    margin: 3px;
+}
+
+.sample-img_4 p {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(203, 206, 209);
+    color: rgb(73, 3, 105);
+    font-size: 20px;
+    padding: 2px;
+    text-decoration: bold;
+}
+
+.sample-img_4 h6 {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(203, 206, 209);
+    color: rgb(73, 3, 105);
+    font-size: 12px;
+    padding: 2px;
+    text-decoration: bold;
+}
+
+.sample-img_4:hover {
+    border-radius: 10% 10% 10% 0%;
+    opacity: 0.2px;
+
+}
+.sample-img_4 h6:hover {
+    background-color: rgb(16, 230, 230);
+    color: rgb(74, 87, 97);
+    border-radius: 0px 0px 5px 0px;
+}
+
+.sample-img_4 p:hover {
+    background-color: rgb(16, 230, 230);
+    color: rgb(74, 87, 97);
+}
+
+.sample-img_5 {
+    background-image: url("/assets/images/python_code.JPG");
+    background-size: cover;
+    width: 50%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    border: 4px solid;
+    border-color: white;
+    margin: 3px;
+}
+
+.sample-img_5 p {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(203, 206, 209);
+    color: rgb(73, 3, 105);
+    font-size: 20px;
+    padding: 2px;
+    text-decoration: bold;
+}
+.sample-img_5 h6 {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(203, 206, 209);
+    color: rgb(73, 3, 105);
+    font-size: 12px;
+    padding: 2px;
+    text-decoration: bold;
+}
+
+.sample-img_5:hover{
+    border-radius: 10% 10% 10% 0%;
+    opacity: 0.5px;
+}
+
+
+.sample-img_5 h6:hover {
+    opacity: 0.5px;
+    background-color: rgb(16, 230, 230);
+    color: rgb(74, 87, 97);
+}
+
+.sample-img_5 p:hover {
+    opacity: 0.5px;
+    border-radius: 10% 10% 10% 0%;
+    background-color: rgb(16, 230, 230);
+    color: rgb(74, 87, 97);
+}
+
+
+  .bottomLink{
+      color: white;
+      background-color: rgb(73, 3, 105);
+      padding: 3px;
+      border-radius: 3px;
+  }
+
+  .bottomLink:hover{
+      color: rgb(73, 3, 105);
+      background-color: white;
+  }
+
+  @media screen and (max-width: 992px) {
+    header {
+      flex-direction: column;
+    }
+  }
+
+  /* Large smartphones - navbar changes color */
+  
+  @media screen and (max-width: 768px) {
+    main {
+      
+    flex-direction: column;
+    }
+    aside{
+       visibility: hidden;
+    }
+    nav{
+        flex-direction: column;
+    }
+    .bottomLink{
+        flex-direction: column;
+    }
+    footer{
+        flex-direction: column;
+    }
+  }
+  
+  /* Small smartphones - image placeholders change color */
+  
+  @media screen and (max-width: 576px) {
+    main {
+    
+      flex-direction: column;
+    }
+    aside{
+        visibility: hidden;
+    }
+    nav{
+        flex-direction: column;
+    }
+    .bottomLink{
+        flex-direction: column;
+    }
+    footer{
+        flex-direction: column;
+    }
+  }
+
+  
