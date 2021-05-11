@@ -1,4 +1,5 @@
 # updated-portfolio
+https://zacharykathe.github.io/updated-portfolio/
 ## created with: html, CSS, JavaScript
 ### This is my work as an undergraduate, graduate and now coding bootcamp student neatly gathered as a portfolio
 ![cover photo for my portfolio](https://github.com/ZacharyKathe/updated-portfolio/blob/main/assets/images/cover.JPG)
