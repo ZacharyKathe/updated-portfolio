@@ -39,8 +39,8 @@ footer{
     width: 100%;
     height: 250px;
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
+    align-items:center;
+    justify-content: space-between;
 
 }
 .subhead img {
@@ -48,6 +48,11 @@ footer{
     align-items: flex-end;
     justify-content: flex-end;
     padding: 20px;
+}
+
+#myPic{
+ padding: 0;
+ height: auto;
 }
 
 h1{
